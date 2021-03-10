@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Air Hockey", "Air Hockey\Air Hockey.csproj", "{4D08CE2A-667E-45EF-8508-963E9BA1BBFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D08CE2A-667E-45EF-8508-963E9BA1BBFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D08CE2A-667E-45EF-8508-963E9BA1BBFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D08CE2A-667E-45EF-8508-963E9BA1BBFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D08CE2A-667E-45EF-8508-963E9BA1BBFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A963E825-4AF9-45B1-AE17-B9E767194858}
+	EndGlobalSection
+EndGlobal
