@@ -59,18 +59,19 @@
             this.p2Score.BackColor = System.Drawing.Color.Transparent;
             this.p2Score.Font = new System.Drawing.Font("mono 07_65", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p2Score.ForeColor = System.Drawing.Color.White;
-            this.p2Score.Location = new System.Drawing.Point(474, 9);
+            this.p2Score.Location = new System.Drawing.Point(531, 9);
             this.p2Score.Name = "p2Score";
             this.p2Score.Size = new System.Drawing.Size(34, 31);
             this.p2Score.TabIndex = 1;
             this.p2Score.Text = "0";
+            this.p2Score.Click += new System.EventHandler(this.P2Score_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(932, 441);
+            this.ClientSize = new System.Drawing.Size(805, 513);
             this.Controls.Add(this.p2Score);
             this.Controls.Add(this.p1Score);
             this.DoubleBuffered = true;

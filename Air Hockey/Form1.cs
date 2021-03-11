@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 
+//Joey Gerber 
+//Mr. T
+//ICS3U
+// A classic game of air hockey, optimized so that the puck always is sent towards your opponents net. Can be a place for some very intense air hockey games.
+
 namespace Air_Hockey
 {
     public partial class Form1 : Form
@@ -22,6 +27,7 @@ namespace Air_Hockey
         int stickLength = 30;
         int stickWidth = 30;
 
+        //Location Variables (Puck)
         int puckX = 410;
         int puckY = 230;
         int puckLength = 20;
@@ -86,7 +92,7 @@ namespace Air_Hockey
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
-            {
+            { //player 1 keys
                 case Keys.W:
                     wDown = false;
                     break;
@@ -99,7 +105,7 @@ namespace Air_Hockey
                 case Keys.A:
                     aLeft = false;
                     break;
-
+                    //player 2 keys
                 case Keys.Up:
                     upArrowUp = false;
                     break;
@@ -153,7 +159,7 @@ namespace Air_Hockey
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = this.CreateGraphics();
-            g.FillRectangle(greenBrush, 408, 0, 4, 480);
+            g.FillRectangle(greenBrush, 408, 0, 4, 513 );
             g.FillEllipse(blueBrush, stick1X, stick1Y, 30, 30);
             g.FillEllipse(redBrush, stick2X, stick2Y, 30, 30);
             g.FillRectangle(whiteBrush, puckX, puckY, 20, 20);
@@ -181,7 +187,7 @@ namespace Air_Hockey
                 stick1Y -= stickSpeed;
             }
 
-            if (sDown == true && stick1Y < 450 - stickLength)
+            if (sDown == true && stick1Y < 513 - stickLength)
             {
                 stick1Y += stickSpeed;
             }
@@ -196,7 +202,7 @@ namespace Air_Hockey
 
             //move player 2
 
-            if (downArrowDown == true && stick2Y < 450 - stickLength)
+            if (downArrowDown == true && stick2Y < 513 - stickLength)
             {
                 stick2Y += stickSpeed;
             }
@@ -204,7 +210,7 @@ namespace Air_Hockey
             {
                 stick2Y -= stickSpeed;
             }
-            if (rightRight == true && stick2X < goal2X)
+            if (rightRight == true && stick2X < 786)
             {
                 stick2X += stickSpeed;
             }
@@ -286,6 +292,11 @@ namespace Air_Hockey
             }
 
             Refresh();
+
+        }
+
+        private void P2Score_Click(object sender, EventArgs e)
+        {
 
         }
     }
