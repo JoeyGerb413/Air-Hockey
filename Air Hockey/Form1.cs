@@ -12,8 +12,7 @@ using System.Media;
 //Joey Gerber 
 //Mr. T
 //ICS3U
-// A classic game of air hockey, optimized so that the puck always is sent towards your opponents net. Can be a place for some very intense air hockey games.
-
+// A classic game of air hockey, optimized so that the puck always is always sent towards your opponents net when you hit it to prevent accidental self goals. 
 namespace Air_Hockey
 {
     public partial class Form1 : Form
@@ -45,8 +44,8 @@ namespace Air_Hockey
         int goal2Length = 100;
 
         //speed variables
-        int puckXSpeed = 6;
-        int puckYSpeed = 6;
+        int puckXSpeed = 0;
+        int puckYSpeed = 0;
         int stickSpeed = 13;
 
         //Key Variables
@@ -158,6 +157,7 @@ namespace Air_Hockey
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            //various graphics
             Graphics g = this.CreateGraphics();
             g.FillRectangle(greenBrush, 408, 0, 4, 513 );
             g.FillEllipse(blueBrush, stick1X, stick1Y, 30, 30);
@@ -245,12 +245,16 @@ namespace Air_Hockey
             //player collisions if statements
             if (p1Collision.IntersectsWith(ballCollision))
             {
+                puckXSpeed = -6;
+                puckYSpeed = 6;
                 puckXSpeed *= -1;
                 puckX = stick1X + stickLength + 1;
                 impact.Play();
             }
             else if (p2Collision.IntersectsWith(ballCollision))
             {
+                puckXSpeed = 6;
+                puckYSpeed = 6;
                 puckXSpeed *= -1;
                 puckX = stick2X - stickLength - 1;
                 impact.Play();
@@ -264,6 +268,8 @@ namespace Air_Hockey
                 p1Score.Text = $"{p1ScoreCount}";
                 puckX = 410;
                 puckY = 230;
+                puckYSpeed = 0;
+                puckXSpeed = 0;
                 beep.Play();
             }
             //goal2 collision w/ ball
@@ -273,9 +279,11 @@ namespace Air_Hockey
                 p2Score.Text = $"{p2ScoreCount}";
                 puckX = 410;
                 puckY = 230;
+                puckYSpeed = 0;
+                puckXSpeed = 0;
                 beep.Play();
             }
-
+            //Winning Score
             if (p1ScoreCount == 3)
             {
                 p1Score.Text = "Winner";
